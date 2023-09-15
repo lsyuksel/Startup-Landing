@@ -18,3 +18,7 @@ npm install
 ```
 npm run dev
 ``` 
+
+## Live
+
+https://rococo-biscuit-ab0095.netlify.app/
