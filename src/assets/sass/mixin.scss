@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+@import './reset.scss';
+
+// Font Family
+$font-family: 'DM Sans', sans-serif;
+
+$primary-color: #356DFF;
+$primary-hover-color: #1648CB;
+$secondary-color: #0B0D39;
+$secondary-hover-color: #2A2C6A;
+$third-color : #FF9100;
+
+$white-color: #ffffff;
+$text-color: rgb(11 13 57 / 60%);
+$border-color: #ECECEC;
+
+// Transition
+$transition: ease-in-out all .4s;
+
+$xxxs : 374;
+$xxs : 424;
+$xs : 575;
+$sm : 767;
+$md : 991;
+$lg : 1199;
+$xlg : 1360;
+$xxlg : 1681;
+$gutter : 15px;
+
+@mixin max($breakpoint) {
+	@media (max-width: $breakpoint + px) {
+		@content;
+	}
+}
+
+@mixin min($breakpoint) {
+	@media (min-width: ($breakpoint + 1) + px) {
+		@content;
+	}
+}
+
+@include min($lg) {
+	.container {
+		max-width: calc(1400px + $gutter*2) !important;
+		.row {
+			margin-left: -$gutter;
+			margin-right: -$gutter;
+			> div {
+				padding-left: $gutter;
+				padding-right: $gutter;
+			}
+		}
+	}
+}
+
+@mixin center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin imgcenter {
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+@mixin fit {
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}

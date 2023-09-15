@@ -1,0 +1,56 @@
+.newsletter-area {
+    padding: 0 0 200px;
+    background-image: url("/newsletter-area-bg.png");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: initial;
+    .newsletter-content {
+        padding: 80px 0 0;
+        .newsletter-title {
+            font-size: 64px;
+            letter-spacing: -.43px;
+            color: $secondary-color;
+            font-weight: bold;
+            line-height: 100%;
+            margin-bottom: 32px;
+            b {
+                color: $primary-color;
+                font-weight: bold;
+            }
+        }
+        .newsletter-text {
+            font-size: 20px;
+            line-height: 36px;
+            color: $text-color;
+            margin-bottom: 28px;
+        }
+    }
+    @include max($xlg) {
+        .newsletter-content {
+            .newsletter-title {
+                font-size: 50px;
+            }
+        }
+    }
+    @include max($md) {
+        padding: 0 0 40px;
+        border-bottom: 1px solid #dede;
+        margin-bottom: 40px;
+    }
+    @include max($sm) {
+        background: #fff;
+    }
+    @include max($xs) {
+        .newsletter-content {
+            .newsletter-title {
+                font-size: 40px;
+                margin-bottom: 24px;
+            }
+            .newsletter-text {
+                font-size: 16px;
+                line-height: 160%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

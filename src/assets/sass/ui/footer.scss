@@ -1,0 +1,209 @@
+footer {
+    .footer-top {
+        margin-bottom: 100px;
+    }
+    .footer-bottom {
+        padding: 48px 0;
+        border-top: 1px solid #DBDBE6;
+        color: $text-color;
+        font-size: 20px;
+        text-align: center;
+        line-height: 100%;
+    }
+    @include max($lg) {
+        .footer-bottom {
+            padding: 36px 0;
+            font-size: 18px;
+        }
+    }
+    @include max($sm) {
+        .footer-top {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.contact-info-area {
+    .contact-title {
+        display: inline-block;
+        color: $third-color;
+        padding: 16px 20px;
+        letter-spacing: 1.8px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 100%;
+        border-radius: 44px;
+        background: rgb(255 145 0 / 20%);
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+    .contact-mail {
+        margin-bottom: 54px;
+        > a {
+            display: flex;
+            align-items: center;
+            color: $secondary-color;
+            font-size: 64px;
+            letter-spacing: -.43px;
+            line-height: 100%;
+            transition: $transition;
+            > span {
+                margin-right: 50px;
+            }
+            > svg {
+                transition: $transition;
+            }
+            &:hover {
+                color: $primary-color;
+                > svg {
+                    transform: translateX(8px);
+                }
+            }
+        }
+    }
+    @include max($xlg) {
+        .contact-title {
+            margin-bottom: 30px;
+            font-size: 16px;
+            padding: 12px 24px;
+        }
+        .contact-mail {
+            margin-bottom: 30px;
+            > a {
+                font-size: 40px;
+                > svg {
+                    width: 48px;
+                    height: 48px;
+                }
+                > span {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    @include max($xs) {
+        .contact-mail > a {
+            font-size: 24px;
+            > svg {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    > div {
+        margin-right: 16px;
+        &:last-child {
+            margin-right: 0;
+        }
+        > a {
+            @include center;
+            width: 66px;
+            height: 66px;
+            border: 1px solid #DCDCE3;
+            border-radius: 50%;
+            transition: $transition;
+            > svg path {
+                transition: $transition;
+            }
+            &:hover {
+                border-color: $primary-color;
+                background: $primary-color;
+                > svg path {
+                    fill: $white-color;
+                }
+            }
+        }
+    }
+    .title {
+        color: $text-color;
+        font-size: 20px;
+        margin-right: 28px;
+    }
+    @include max($xlg) {
+        .title {
+            font-size: 18px;
+        }
+        > div > a {
+            width: 48px;
+            height: 48px;
+            > svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.footer-menu-container {
+    padding-left: 40px;
+    .footer-menu-title {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: rgb(11 13 57 / 40%);
+        margin-bottom: 60px;
+    }
+    .footer-menu {
+        ul {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: -24px;
+            li {
+                width: calc(100%/3);
+                margin-bottom: 24px;
+                a {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 500;
+                    line-height: 100%;
+                    color: $secondary-color;
+                    transition: $transition;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 13px;
+                        height: 13px;
+                        background: $primary-color;
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: $transition;
+                    }
+                    &:hover {
+                        padding-left: 28px;
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include max($xlg) {
+        padding: 0;
+        .footer-menu ul li a {
+            font-size: 20px;
+        }
+        .footer-menu-title {
+            margin-bottom: 32px;
+        }
+    }
+    @include max($sm) {
+        .footer-menu ul {
+            margin: -8px -12px;
+            li {
+                width: auto;
+                margin: 8px 12px;
+            }
+        }
+    }
+}
